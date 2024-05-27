@@ -36,30 +36,30 @@ const account4 = {
 const accounts = [account1, account2, account3, account4];
 
 // Elements
-const labelWelcome = document.querySelector('.welcome');
-const labelDate = document.querySelector('.date');
-const labelBalance = document.querySelector('.balance__value');
-const labelSumIn = document.querySelector('.summary__value--in');
-const labelSumOut = document.querySelector('.summary__value--out');
-const labelSumInterest = document.querySelector('.summary__value--interest');
-const labelTimer = document.querySelector('.timer');
+// const labelWelcome = document.querySelector('.welcome');
+// const labelDate = document.querySelector('.date');
+// const labelBalance = document.querySelector('.balance__value');
+// const labelSumIn = document.querySelector('.summary__value--in');
+// const labelSumOut = document.querySelector('.summary__value--out');
+// const labelSumInterest = document.querySelector('.summary__value--interest');
+// const labelTimer = document.querySelector('.timer');
 
-const containerApp = document.querySelector('.app');
-const containerMovements = document.querySelector('.movements');
+// const containerApp = document.querySelector('.app');
+// const containerMovements = document.querySelector('.movements');
 
-const btnLogin = document.querySelector('.login__btn');
-const btnTransfer = document.querySelector('.form__btn--transfer');
-const btnLoan = document.querySelector('.form__btn--loan');
-const btnClose = document.querySelector('.form__btn--close');
-const btnSort = document.querySelector('.btn--sort');
+// const btnLogin = document.querySelector('.login__btn');
+// const btnTransfer = document.querySelector('.form__btn--transfer');
+// const btnLoan = document.querySelector('.form__btn--loan');
+// const btnClose = document.querySelector('.form__btn--close');
+// const btnSort = document.querySelector('.btn--sort');
 
-const inputLoginUsername = document.querySelector('.login__input--user');
-const inputLoginPin = document.querySelector('.login__input--pin');
-const inputTransferTo = document.querySelector('.form__input--to');
-const inputTransferAmount = document.querySelector('.form__input--amount');
-const inputLoanAmount = document.querySelector('.form__input--loan-amount');
-const inputCloseUsername = document.querySelector('.form__input--user');
-const inputClosePin = document.querySelector('.form__input--pin');
+// const inputLoginUsername = document.querySelector('.login__input--user');
+// const inputLoginPin = document.querySelector('.login__input--pin');
+// const inputTransferTo = document.querySelector('.form__input--to');
+// const inputTransferAmount = document.querySelector('.form__input--amount');
+// const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+// const inputCloseUsername = document.querySelector('.form__input--user');
+// const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -74,3 +74,64 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+/**
+ * Slice method
+ * does not mutate the original array but returns a
+ *  new array with the extracted parts
+ */
+// variable.slice(beginningIndexParameter, optional=endParameter --> (this endParameter will not be included in the new array))
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+console.log(arr.slice(1, -2));
+console.log(arr.slice());
+console.log([...arr]);
+
+/**
+ * Splice
+ * deletes the specified indexes
+ * relatively similar to slice but does mutate original array
+ */
+// console.log(arr.splice(2));
+// arr.splice(-1);
+// console.log(arr);
+// arr.splice(1, 3);
+// console.log(arr);
+
+/**
+ * Reverse
+ * mutates original array
+ */
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+
+/**
+ * Concat
+ * used to concatenate 2 arrays
+ * does not mutate original array
+ */
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log([...arr, ...arr2]);
+
+/**
+ * Join
+ * joins array together to form a string
+ * uses a separator as the first parameter
+ */
+console.log(letters.join('-'));
+
+/**
+ * At
+ * same as bracket notation variableArray[0]
+ */
+const arr3 = [23, 11, 64];
+console.log(arr3[0]);
+console.log(arr3.at(0));
+
+// getting the last element
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.slice(-1)[0]);
+console.log(arr3.at(-1));
