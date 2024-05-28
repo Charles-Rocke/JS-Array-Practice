@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -135,3 +135,147 @@ console.log(arr3.at(0));
 console.log(arr3[arr3.length - 1]);
 console.log(arr3.slice(-1)[0]);
 console.log(arr3.at(-1));
+
+console.log('anthony'.at(0));
+console.log('anthony'.at(-1));
+
+/**
+ * Quiz 1
+ */
+
+/**
+ * 1. Slice Method
+ * Given an array const arr = [1, 2, 3, 4, 5, 6, 7];,
+ *  use the slice method to create a new
+ *  array that contains the elements from index 2 to 5.
+ */
+const ar = [1, 2, 3, 4, 5, 6, 7];
+// create a new array that contains the elements from index 2 to 5
+console.log(ar.slice(2, 5));
+
+/**
+ * 2. Slice with Negative Indices
+ * Using the same array const arr = [1, 2, 3, 4, 5, 6, 7];,
+ *  create a new array that contains the last three
+ *  elements using the slice method.
+ */
+console.log(ar.slice(-3));
+
+/**
+ * 3. Slice Without Parameters
+ * Given const arr = ['a', 'b', 'c', 'd', 'e'];,
+ *  use the slice method to create a shallow
+ *  copy of the entire array.
+ */
+arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr.slice());
+//or
+console.log([...arr]);
+
+/**
+ * 4. Splice Method to Remove Elements
+ * Given const arr = [10, 20, 30, 40, 50];,
+ *  use the splice method to remove the
+ *  elements from index 1 to 3 (inclusive).
+ */
+const arrv = [10, 20, 30, 40, 50];
+console.log(arrv.splice(1, 3));
+console.log(arrv);
+
+/**
+ * 5. Splice Method to Add Elements
+ * Using the same array const arr = [10, 20, 30, 40, 50];,
+ *  use the splice method to add the elements 25 and 35
+ *  after index 1.
+ */
+// splice(startIndex, numToDeleteOffTheEnd, ...ItemsToAdd)
+arrv.splice(1, 0, 25, 35);
+console.log(arrv);
+
+/**
+ * 6. Reverse Method
+ * Given const arr = [1, 2, 3, 4, 5];,
+ *  use the reverse method to reverse
+ *  the order of the elements in the array.
+ */
+arr = [1, 2, 3, 4, 5];
+console.log(arr.reverse());
+
+/**
+ * 7. Concat Method
+ * Given two arrays const arr1 = ['x', 'y', 'z'];
+ *  and const arr2 = [1, 2, 3];, use the concat
+ *  method to create a new array that combines
+ *  both arrays.
+ */
+arr = ['x', 'y', 'z'];
+let arr1 = [1, 2, 3];
+console.log(arr1.concat(arr));
+const newArr = arr1.concat(arr);
+console.log(newArr);
+
+/**
+ * 8. Join Method
+ * Given const arr = ['a', 'b', 'c', 'd'];,
+ *  use the join method to create a string
+ *  with elements separated by a comma and
+ *  a space (, ).
+ */
+arr = ['a', 'b', 'c', 'd'];
+console.log(arr.join(', '));
+
+/**
+ * 9. At Method
+ * Given const arr = [10, 20, 30, 40, 50];,
+ *  use the at method to access the third element.
+ */
+arr = [10, 20, 30, 40, 50];
+console.log(arr.at(2));
+
+/**
+ * 10. Combining Methods
+ * Given const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];,
+ *  use a combination of slice, reverse, concat,
+ *  and join methods to create a string that
+ *  represents the array in reverse order, with
+ *  elements separated by a hyphen (-).
+ */
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+arr.reverse();
+console.log(arr.join('-'));
+
+/**
+ * Looping Arrays forEach
+ * requires a callback function in
+ *  order to tell it what to do
+ *  in each loop iteration, it will
+ *  execute the callback function
+ *  it will also pass in the current
+ *  element of the array as an argument
+ *
+ * the order of the parameters (currentElement, index, and the whole Array being used)
+ *  must be in that exact order
+ *
+ * continue and break statements never work in a forEach loop
+ */
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for of
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited: ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew: ${movement}`);
+  }
+}
+
+console.log('-----forEach below-----');
+// forEach
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited: ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdrew: ${movement}`);
+  }
+});
